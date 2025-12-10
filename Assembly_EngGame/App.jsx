@@ -6,7 +6,7 @@ import Confetti from "react-confetti";
 export default function App() {
     const [lettersArr, setLettersArr] = React.useState([]);
     const [randomWord, setRandomWord] = React.useState(() => getRandomWord());
-    const alphabet = "abcdefghijklmnoprstuvwxyz";
+    const alphabet = "abcdefghijklmnopqrstuvwxyz";
     const wrongGuessesArray = lettersArr.filter(letter => !randomWord.includes(letter)).length;
     const isGameWon = randomWord.split("").every(letter => lettersArr.includes(letter))
     const isGameLost = wrongGuessesArray >= languages.length-1;
@@ -140,4 +140,5 @@ export default function App() {
             : ""}
         </main>
     )
+
 }
